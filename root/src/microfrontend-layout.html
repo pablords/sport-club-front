@@ -1,0 +1,24 @@
+<single-spa-router>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+  </style>
+  <main>
+    <nav>
+      <application name="@mfe/navbar"></application>
+    </nav>
+    <route path="/login">
+      <application name="@mfe/login"></application>
+    </route>
+    <route path="/partners">
+      <application name="@mfe/partners"></application>
+    </route>
+    <footer>
+      <application name="@mfe/footer"></application>
+    </footer>
+  </main>
+</single-spa-router>
