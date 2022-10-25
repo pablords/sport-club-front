@@ -21,7 +21,7 @@ export function Login(props: ILoginProps) {
 
     const handleSignin = () => {
         const token = "af449452-bb38-4ebb-a12f-d6eaaf5ca43c"
-        if(username ==="user" && password ==="123"){
+        if(username ==="poc" && password ==="matrix"){
             props.setToken(token)
             setError(false)
             navigation({ pathname: "/partners" })

@@ -9,7 +9,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import IconRefresh from '@mui/icons-material/Refresh';
 
 
-export function ButtonAppBar() {
+export function ButtonAppBar({ logout, isAuthenticated }) {
+
+    const TOKEN_KEY = "@startSetup";
+
+    const handleLogout = () => {
+        logout()
+        window.location.href = "/login"
+    }
+
+    const handleLogin = () => {
+        window.location.href = "/login"
+    }
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -35,7 +46,13 @@ export function ButtonAppBar() {
                         />
                     </IconButton>
 
-                    <Button color="inherit">Login</Button>
+
+                    {
+                        isAuthenticated() ?
+                            <Button onClick={handleLogout} color="inherit">Logout</Button>
+                            :
+                            <Button onClick={handleLogin} color="inherit">Login</Button>
+                    }
                 </Toolbar>
             </AppBar>
         </Box>

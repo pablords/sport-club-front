@@ -22,7 +22,11 @@ export function PartnesList() {
     loadAllData()
   }
 
-  document.getElementById("button-refresh").addEventListener("click", getEventButton)
+  const buttonRefresh = document.getElementById("button-refresh")
+  if (buttonRefresh) {
+    buttonRefresh.addEventListener("click", getEventButton)
+  }
+
 
 
   const loadAllData = () => {
@@ -30,7 +34,7 @@ export function PartnesList() {
   }
 
   React.useEffect(() => {
-   loadAllData()
+    loadAllData()
   }, [])
 
   return (

@@ -1,9 +1,16 @@
 //@ts-nocheck
-import { setToken, isAuthenticated, getToken, logout } from "@mfe/auth";
+
 import AppRoutes from "./routes"
 
+export interface IAuth {
+  isAuthenticated: () => Boolean
+  getToken: () => string
+  setToken: (token: string) => void
+  logout: () => void
+}
 
-export default function Root(props) {
+export default function Root({ getToken, isAuthenticated, logout, setToken }: IAuth) {
+
   return (
     <AppRoutes
       setToken={setToken}
